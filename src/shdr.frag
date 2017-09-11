@@ -1,7 +1,10 @@
 #version 150 core
 
+uniform samplerBuffer t_TexBuf;
+
 out vec4 Target0;
 
 void main() {
-    Target0 = vec4(1, 0, 0, 1);
+    vec4 colour = texelFetch(t_TexBuf, 0);
+    Target0 = colour;
 }
